@@ -9,6 +9,9 @@ import { AppRoutes } from "./app.routing";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatCardModule } from "@angular/material/card";
+import { StoreModule } from "@ngrx/store";
+import { reducers, initialState } from "./app.state";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 @NgModule({
   declarations: [AppComponent, BananaComponent],
@@ -19,6 +22,10 @@ import { MatCardModule } from "@angular/material/card";
     MatInputModule,
     MatCardModule,
     RouterModule.forRoot(AppRoutes),
+    StoreModule.forRoot(reducers, { initialState }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

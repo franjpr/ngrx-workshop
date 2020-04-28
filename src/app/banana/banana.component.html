@@ -3,24 +3,18 @@
   <div style="text-align: center; font-family: Arial;">
     <h1>{{ title }}!</h1>
     <div *ngIf="banana$ | async as banana">
-      <form>
-        <button class="local-button-border" type="submit" (click)="newBanana()">
-          New Banana
-        </button>
-        <button
-          class="local-button-border"
-          type="submit"
-          (click)="peelBanana()"
-        >
-          Peel Banana
-        </button>
-        <button class="local-button-border" type="submit" (click)="eatBanana()">
-          Eat Banana
-        </button>
-        <button class="local-button-border" type="submit" (click)="timeHop()">
-          Time Hop
-        </button>
-      </form>
+      <button mat-raised-button (click)="newBanana()">
+        New Banana
+      </button>
+      <button mat-raised-button (click)="peelBanana()">
+        Peel Banana
+      </button>
+      <button mat-raised-button (click)="eatBanana()">
+        Eat Banana
+      </button>
+      <button mat-raised-button (click)="timeHop()">
+        Time Hop
+      </button>
 
       <div style="height: 30px;"></div>
       <div *ngIf="!banana.isPeeled && banana.color === 'yellow'">
