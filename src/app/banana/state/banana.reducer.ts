@@ -4,6 +4,7 @@ import {
   GET_NEW_BANANA,
   PEEL_BANANA,
   EAT_BANANA,
+  FINISH_TIME_HOP,
 } from "./banana.actions";
 
 export const reducer = (state: State, action: BananaAction): State => {
@@ -26,6 +27,12 @@ export const reducer = (state: State, action: BananaAction): State => {
       return {
         ...state,
         bitesRemaining: state.bitesRemaining - action.payload,
+      };
+    }
+    case FINISH_TIME_HOP: {
+      return {
+        ...state,
+        color: action.payload,
       };
     }
     default:

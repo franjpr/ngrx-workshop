@@ -10,8 +10,9 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatCardModule } from "@angular/material/card";
 import { StoreModule } from "@ngrx/store";
-import { reducers, initialState } from "./app.state";
+import { reducers, initialState, effects } from "./app.state";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { EffectsModule } from "@ngrx/effects";
 
 @NgModule({
   declarations: [AppComponent, BananaComponent],
@@ -26,6 +27,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
     StoreDevtoolsModule.instrument({
       maxAge: 25,
     }),
+    EffectsModule.forRoot(effects),
   ],
   providers: [],
   bootstrap: [AppComponent],

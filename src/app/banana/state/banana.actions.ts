@@ -29,6 +29,7 @@ export class TimeHopStart implements Action {
     console.log(`actionType: ${this.type}`);
   }
 }
+
 export class TimeHopFinish implements Action {
   readonly type: string = FINISH_TIME_HOP;
 
@@ -36,6 +37,7 @@ export class TimeHopFinish implements Action {
     console.log(`actionType: ${this.type}`);
   }
 }
+
 export class EatBanana implements Action {
   readonly type: string = EAT_BANANA;
 
